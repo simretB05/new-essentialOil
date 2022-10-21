@@ -1,0 +1,410 @@
+/***********************
+* COLORS
+************************/
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;500;600&display=swap");
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1MmgVxGIzIFKw.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Kumbh";
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kumbhsans/v11/c4mw1n92AsfhuCq6tVsaoIx1CHIi4kToNopqShNBVo0iPw.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/*******************
+* MEDIA QUERIES
+********************/
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1MmgVxGIzIFKw.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Kumbh";
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kumbhsans/v11/c4mw1n92AsfhuCq6tVsaoIx1CHIi4kToNopqShNBVo0iPw.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/***********************
+* DEVICES
+************************/
+/***********************
+* COLUMN
+************************/
+/*******************
+* SPACING
+********************/
+/***********************
+* DEVICES
+************************/
+/***********************
+* COLUMN
+************************/
+/*******************
+* SPACING
+********************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Kumbh";
+}
+
+.content {
+  padding: 5rem 0 0 0;
+  min-height: 100%;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  height: 5rem;
+  z-index: 100;
+  font-family: "Kumbh Sans";
+  background-color: hsl(26.67deg, 15.25%, 88.43%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.header__toggle {
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__toggle__btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  width: 35px;
+  height: 36px;
+  padding: 0;
+  background-color: hsl(26.67deg, 15.25%, 88.43%);
+  cursor: pointer;
+}
+@media screen and (min-width: 1020px) {
+  .header__toggle__btn {
+    display: none;
+  }
+}
+.header__toggle__btn__burger {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 17px;
+  height: 2px;
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  transition: all 0.5s ease;
+}
+.header__toggle__btn__burger::before, .header__toggle__btn ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 2px;
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  box-shadow: 0 2px 5px rbga(255, 101, 47, 0.2);
+}
+.header__toggle__btn__burger::before {
+  transform: translateY(-5px);
+}
+.header__toggle__btn__burger::after {
+  transform: translateY(5px);
+}
+.header__toggle__home__link {
+  padding: 0;
+  margin: 0;
+  color: hsl(212deg, 27%, 19%);
+  font-weight: 900 !important;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+.header__toggle__logo {
+  margin: 0;
+  padding: 0;
+  width: 166px;
+  text-align: center;
+}
+
+.header__toggle__btn__open {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 17px;
+  height: 2px;
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  transition: all 0.5s ease;
+  transform: translateX(-50px);
+}
+
+.header__toggle__btn__open::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 2px;
+  background: hsl(357.84deg, 88.99%, 42.75%);
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  transition: all 0.5s ease-in-out;
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.header__toggle__btn__open::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 2px;
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  box-shadow: 0 2px 5px rbga(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: hsl(26.67deg, 15.25%, 88.43%);
+  height: 5rem;
+  width: 8rem;
+}
+@media screen and (min-width: 1020px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+  }
+}
+.nav__list {
+  font-family: "Kumbh Sans";
+  width: 70%;
+  height: 100vh;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  font-weight: 900;
+  list-style: none;
+  flex-direction: column;
+  padding-top: 6rem;
+  background-color: hsl(26.67deg, 15.25%, 88.43%);
+  z-index: 10;
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+@media screen and (min-width: 1020px) {
+  .nav__list {
+    padding: 0;
+    position: static;
+    width: 35.25rem;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transform: none;
+    transition: none;
+  }
+}
+.nav__list__description {
+  font-weight: 900;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin: 0;
+  width: 120px;
+  margin-top: 3rem;
+  padding: 0;
+}
+@media screen and (min-width: 1020px) {
+  .nav__list__description {
+    margin: 0;
+    text-align: center;
+    flex-direction: row;
+  }
+}
+.nav__list__description__link {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: #0e0e0e;
+  font-family: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  padding: 1rem 0;
+}
+.nav__list__description__link:hover {
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+@media screen and (min-width: 1020px) {
+  .nav__list__description__link {
+    padding: 2.06rem 0;
+  }
+}
+.nav__list__description__link::after {
+  content: "";
+  width: 100%;
+  height: 2.16px;
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: transform ease-in;
+  transition: transform 0.5s;
+}
+.nav__list__description__link:hover::after {
+  transform: scaleX(1);
+}
+.nav__list__description__link:active {
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+
+.navToggle__active {
+  font-family: "Kumbh Sans";
+  width: 70%;
+  height: 100vh;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  font-weight: 900;
+  list-style: none;
+  flex-direction: column;
+  padding-top: 6rem;
+  background-color: hsl(26.67deg, 15.25%, 88.43%);
+  z-index: 10;
+  padding: 1rem;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+}
+@media screen and (min-width: 1020px) {
+  .navToggle__active {
+    padding: 0;
+    position: static;
+    width: 35.25rem;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transform: none;
+    transition: none;
+  }
+}
+
+.nav__list__description__login {
+  background-color: transparent;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid hsl(0deg, 0%, 100%);
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  border-radius: 0.563rem;
+  border: none;
+  margin-top: 2.5rem;
+  padding: 0.3rem;
+  width: 8.4rem;
+  text-align: center;
+  border: 1px solid hsl(357.84deg, 88.99%, 42.75%);
+}
+.nav__list__description__login:hover {
+  color: hsl(357.84deg, 88.99%, 42.75%);
+  background-color: hsl(357.84deg, 88.99%, 42.75%);
+  border-color: hsl(26.67deg, 15.25%, 88.43%);
+}
+@media screen and (min-width: 1020px) {
+  .nav__list__description__login {
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .nav__list__description__login:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    border: none;
+  }
+}
+.nav__list__description__login__link {
+  font-family: "Kumbh Sans";
+  font-weight: 700;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+@media screen and (min-width: 1020px) {
+  .nav__list__description__login__link {
+    color: hsl(357.84deg, 88.99%, 42.75%);
+  }
+  .nav__list__description__login__link:hover {
+    color: #0e0e0e;
+  }
+}
+.nav__list__description__login__link__img {
+  display: none;
+}
+@media screen and (min-width: 1020px) {
+  .nav__list__description__login__link__img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+  }
+}
+
+.overlay::before {
+  content: "";
+  opacity: 0.77;
+  min-width: 100%;
+  height: 100vh;
+  display: block;
+  right: 0;
+  top: 100%;
+  position: absolute;
+  background: hsl(265.71deg, 36.21%, 45.49%);
+  -webkit-animation: slidex 1s;
+          animation: slidex 1s;
+}
+@media screen and (min-width: 1020px) {
+  .overlay::before {
+    display: none;
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+@-webkit-keyframes slidex {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slidex {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}/*# sourceMappingURL=navbar.module.css.map */
