@@ -226,7 +226,7 @@ body {
   padding: 0.4rem;
   margin: 5px 0;
   border: 0.6px solid hsl(210deg, 4%, 67%);
-  border-radius: 7px;
+  border-radius: 3px;
   outline: none;
   background-color: transparent;
 }
@@ -235,7 +235,7 @@ body {
   padding: 0.4rem;
   margin: 5px 0;
   border: 0.6px solid hsl(210deg, 4%, 67%);
-  border-radius: 7px;
+  border-radius: 3px;
   outline: none;
   background-color: transparent;
 }

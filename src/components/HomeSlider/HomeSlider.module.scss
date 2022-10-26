@@ -9,33 +9,53 @@
   @include laptop-query{
     height: 680px;
   }
-  &__prev{
+  &__btn{
+    width: 100%;
+    @include flex-space-bteween;
     position: absolute;
-    left: 1%;
-    font-size: 1.4rem;
-    color:$c-deep-red;
-    z-index: 2;
+    top:20%;
+    z-index: 10;
+    padding: 1rem;
+    @include tablet-query{
+      top:40%;
+ 
+    }
+    @include laptop-query{
+      top:50%;
+ 
+    }
+    @include laptop-l-query{
+      top:45%;
+ 
+    }
+  }
+  &__prev{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    color:$c-white;
     cursor: pointer;
     user-select: none;
-    border-radius: 50%;
     text-align: center;
-   @include laptop-query{
-     top:35%;
-
-   }
+    @include flex-center;
+   
    &:hover{
      color:$c-deep-red;
    }
  }
  &__next{
-     position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
      right: 1%;
-     font-size: 1.4rem;
-     color:$c-deep-red;
-     z-index: 2;
+     color:rgb(246, 238, 238);
      cursor: pointer;
      user-select: none;
      text-align: center;
+     @include flex-center;
+
    &:hover{
      color:rgb(236, 24, 31)
    }
