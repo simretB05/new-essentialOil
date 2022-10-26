@@ -8,10 +8,11 @@ import ErrorPage from "./pages/ErrorPage";
 import SharedLayout from "./pages/shearedLayout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../src/styles/styles.scss"
-
+import { OpenMenuProvider } from "./components/menuOpen";
 
 function App() {
   return (
+    <OpenMenuProvider>
     <Router>
       <Routes>
         <Route path="/" element={<SharedLayout />} >
@@ -21,9 +22,11 @@ function App() {
           <Route path="/contact-us" exact element={<ContactUs />} />
           <Route path="/log-in" exact element={<LogIn />} />
           <Route path="*" exact element={<ErrorPage />} />
+       
         </Route>
       </Routes>
-    </Router>
+      </Router>
+      </OpenMenuProvider>
 
   );
 }

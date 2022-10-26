@@ -64,73 +64,178 @@ body {
   min-height: 100%;
 }
 
-.main__login {
+.section {
   width: 100%;
   height: 100vh;
+}
+.section__main {
+  border: 2px solid hsl(357.84deg, 88.99%, 42.75%);
+  width: 90%;
+  height: 40rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1020px) {
+  .section__main {
+    width: 50%;
+  }
+}
+
+.login {
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.login__box {
+  border: 2px solid hsl(357.84deg, 88.99%, 42.75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  width: 200px;
+  border-radius: 15px;
+}
+.login__box__boxCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .login__form {
   font-family: "Kumbh Sans";
-  color: #0e0e0e;
-  width: 17.8125rem;
-  height: 666px;
-  position: relative;
-  margin: 6% auto;
-  background-color: hsl(0deg, 0%, 100%);
-  padding: 0.6rem;
-  border: 1px solid hsl(357.84deg, 88.99%, 42.75%);
-  overflow: hidden;
-}
-@media screen and (min-width: 1020px) {
-  .login__form {
-    width: 25.8125rem;
-  }
-}
-.login__form__box {
-  width: 240px;
-  margin: 35px auto;
-  position: relative;
-  box-shadow: 0px 0px 4px 4px rgba(25, 52, 24, 0.1215686275);
-  border-radius: 30px;
-}
-.login__form__toggleLogin-btn {
-  padding: 10px 30px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  outline: none;
-  position: relative;
-}
-.login__form__toggleRegister-btn {
-  padding: 10px 30px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  outline: none;
-  position: relative;
+  width: 0;
+  height: 0;
+  visibility: hidde;
 }
 .login__form__boxBtn {
+  font-family: "Kumbh Sans";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 208px;
+  height: 31px;
+  position: relative;
+  background: hsl(0deg, 0%, 100%);
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 200px;
+  box-shadow: inset 0px 15px 65px rgba(128, 36, 36, 0.2), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  transition: 0.4s;
+}
+.login__form__boxBtn::before {
+  content: "";
+  width: 50%;
+  height: 24px;
+  border-radius: 180px;
   position: absolute;
-  top: 0;
+  top: 3px;
+  left: -26px;
+  box-shadow: inset 0px 42px 15px rgb(218, 36, 36), inset 0px 0px 14px rgba(255, 255, 255, 0.4);
+  transition: 0.4s;
+  transform: translateX(30px);
+}
+.login__form__boxBtn__toggleLogin {
+  color: rgb(65, 63, 63);
   left: 0;
-  width: 130px;
-  height: 100%;
-  background: hsl(357.84deg, 88.99%, 42.75%);
-  border-radius: 30px;
+  transition: 0.4s;
+  left: 5px;
+  top: 7px;
+  border: none;
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+.login__form__boxBtn__toggleRegister {
+  color: hsl(357.84deg, 88.99%, 42.75%);
+  left: 36px;
+  top: 7px;
+  transition: 0.4s;
+  border: none;
+  background-color: none;
+}
+
+.login__form__boxBtn__register {
+  font-family: "Kumbh Sans";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 208px;
+  height: 31px;
+  position: relative;
+  background: hsl(0deg, 0%, 100%);
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 200px;
+  box-shadow: inset 0px 15px 65px rgba(128, 36, 36, 0.2), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  transition: 0.4s;
+}
+.login__form__boxBtn__register::before {
+  content: "";
+  width: 50%;
+  height: 24px;
+  border-radius: 180px;
+  position: absolute;
+  top: 3px;
+  left: -26px;
+  box-shadow: inset 0px 42px 15px rgb(218, 36, 36), inset 0px 0px 14px rgba(255, 255, 255, 0.4);
+  transition: 0.4s;
+  transform: translateX(126px);
+}
+
+.login__form__boxBtn__toggleRegister .login__form__boxBtn__toggleLogin {
+  position: absolute;
+  width: 15.5px;
+  top: 0;
+  z-index: 100;
+}
+
+.form__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 3rem;
+  position: relative;
 }
 
 .form__input {
+  font-family: "Kumbh Sans";
   top: 180px;
   position: absolute;
-  width: 70%;
+  width: 100%;
   transition: 0.5s;
   transform: translateX(0);
+}
+@media screen and (min-width: 768px) {
+  .form__input {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .form__input {
+    width: 55%;
+  }
+}
+.form__input__title {
+  font-size: 1.2rem;
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+.form__input__user {
+  width: 100%;
+  padding: 0.4rem;
+  margin: 5px 0;
+  border: 0.6px solid hsl(210deg, 4%, 67%);
+  border-radius: 7px;
+  outline: none;
+  background-color: transparent;
 }
 .form__input__filed {
   width: 100%;
   padding: 0.4rem;
   margin: 5px 0;
-  border: 1px solid hsl(357.84deg, 88.99%, 42.75%);
+  border: 0.6px solid hsl(210deg, 4%, 67%);
+  border-radius: 7px;
   outline: none;
   background-color: transparent;
 }
@@ -151,7 +256,7 @@ body {
   bottom: 66px;
 }
 .form__input__submit__btn {
-  width: 97%;
+  width: 50%;
   padding: 9px 4px;
   cursor: pointer;
   display: block;
@@ -162,6 +267,11 @@ body {
   background-color: hsl(357.84deg, 88.99%, 42.75%);
   outline: none;
   border-radius: 30px;
+}
+@media screen and (min-width: 1020px) {
+  .form__input__submit__btn {
+    width: 60%;
+  }
 }
 
 #login__btn {

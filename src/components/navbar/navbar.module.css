@@ -407,4 +407,9 @@ body {
   to {
     transform: translateX(0);
   }
+}
+
+.nav__cart {
+  background-color: hsl(26.67deg, 15.25%, 88.43%);
+  border: none;
 }/*# sourceMappingURL=navbar.module.css.map */

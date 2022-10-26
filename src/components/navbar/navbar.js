@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import {NavLink} from 'react-router-dom';
 import classes from "../navbar/navbar.module.scss";
 import AddCart from '../addcart/addCart'
+import {useOpenMenu, useOpenMenuUpdate, } from "../menuOpen";
+
 
 
 function Navbar() {
 
-  const [menuOpen, setMenuOpen] = useState(false);
 
-  const menuToggleHandler = () => {
-    setMenuOpen((p) => !p);
+  const menuOpen = useOpenMenu();
+  const UseOpenMenuUpdate = useOpenMenuUpdate();
+  
+  const [menuOpenCart, setMenuOpenCart] = useState(false);
+
+  const menuToggleHandlerCart = () => {
+    console.log('yay')
+    setMenuOpenCart((x)=>!x);
   };
+
 
   return (
   
@@ -18,8 +26,8 @@ function Navbar() {
      
       <div className={classes.header__toggle}>
     
-          <button className={classes.header__toggle__btn} onClick={menuToggleHandler} aria-label="Open menu">
-            <div className={ menuOpen ? classes.header__toggle__btn__open: classes.header__toggle__btn__burger }   ></div>
+          <button className={classes.header__toggle__btn}  onClick={UseOpenMenuUpdate} aria-label="Open menu">
+            <div className={ menuOpen ? classes.header__toggle__btn__open: classes.header__toggle__btn__burger }></div>
           </button>
     
         <NavLink className={classes.header__toggle__home__link} to="/">
@@ -52,17 +60,13 @@ function Navbar() {
             </NavLink>
           </li>
         </ul>
-        <div className={classes.nav__cart}>
+        <button className={classes.nav__cart} onClick={ menuToggleHandlerCart } aria-label="Open menu" >
           <p className={classes.nav__cart__text}>0</p>
           <img className={classes.nav__cart__img} src="../assets/icons/icon-cart.svg" alt="shopping cart" />
-        </div>
+        </button>
    
       </nav>
-  
-      {/* <div className={classes.shoping__cart}>
-        <button className={classes.shoping__cart__close"><img  class="shoping-cart__close-img" src="../assets/icons/icon-close.svg" alt="close icon"></button>
-    </div> */}
-      <AddCart/>
+      <AddCart menuOpenCarts={menuOpenCart} />
     </header>
 
   );

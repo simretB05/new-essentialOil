@@ -1,14 +1,24 @@
 import classes from "../addcart/addCart.module.scss";
+import React, { useState } from "react";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 import {faCcPaypal,faCcVisa,faCcAmazonPay,faApplePay } from '@fortawesome/free-brands-svg-icons';
  
 
-const AddCart = () => { 
+const AddCart = (props) => { 
+	const { menuOpenCarts } = props;
+	const [menuCloseCart, setMenuCloseCart] = useState(false);
+
+  const closeToggleHandlerCart = () => {
+    console.log('nay')
+    setMenuCloseCart((z) => !z);
+  };
 
   return (
-		    <div className={classes.shoping__cart}>
-				<button className={classes.shoping__cart__close}>
+		    <div className={menuCloseCart && menuOpenCarts? classes.shoping__cart__closed :!menuOpenCarts&&!menuCloseCart? classes.shoping__cart__closed: classes.shoping__cart }>
+				<button onClick={closeToggleHandlerCart} className={classes.shoping__cart__close}>
 					<img className={classes.shoping__cart__close__img}
 						src="./assets/icons/icon-close.svg"
 						alt="close icon"/>
@@ -50,10 +60,10 @@ const AddCart = () => {
 					</div>
 			  <div className={classes.pay__options}>
 				  <ul className={classes.pay__options__list}>
-				  <li className={classes.pay__option__item}><FontAwesomeIcon icon={faCcPaypal} /></li>
-				  <li className={classes.pay__option__item}><FontAwesomeIcon icon={faCcVisa} /></li>
-				  <li className={classes.pay__option__item}><FontAwesomeIcon icon={faCcAmazonPay} /></li>
-				  <li className={classes.pay__option__item}><FontAwesomeIcon icon={faApplePay} /></li>
+				  <li className={classes.pay__options__item}><FontAwesomeIcon icon={faCcPaypal} size="2x"/></li>
+				  <li className={classes.pay__options__item}><FontAwesomeIcon icon={faCcVisa}size="2x" /></li>
+				  <li className={classes.pay__options__item}><FontAwesomeIcon icon={faCcAmazonPay} size="2x"/></li>
+				  <li className={classes.pay__options__item}><FontAwesomeIcon icon={faApplePay}size="2x" /></li>
 
 				</ul>
 			</div>

@@ -3,9 +3,9 @@
 .shoping__cart {
     padding: 1rem;
     margin: auto;
-    width: 70%;
+    width:50;
     height: 100vh;
-    background-color: $c-light-rose;
+    background-color: #e6e1dd;;
     @include font-family-normal;
     position: absolute;
     top: 80px;
@@ -40,12 +40,12 @@
     }
     &__close{
       @include flex-center;
-      color: $c-dark-green;
-      width: 30px;
-      height: 30px;
+      color: $c-deep-red;
+      width: 20px;
+      height: 20px;
       border: none;
       position: absolute;
-      right: 220px;
+      right: 170px;
       top: 2px;
       border: 1px solid $c-light-rose;
       border-radius: 50%;
@@ -65,8 +65,10 @@
 
       }
   
-    &__close__img{
-  
+    &__img{
+  fill: $c-deep-red;
+  width: 10px;
+  height: 11px;
       }
     }
     &__popup {
@@ -78,7 +80,7 @@
   
     &__titlecart {
         font-weight: $fw-black;
-        color: $c-dark-green;
+        color: $c-deep-red;
         padding: 1rem 0 1.5rem 1.5rem;
         font-weight: $fw-normal;
         text-align: center;
@@ -87,8 +89,8 @@
         display: block;
         width: 100%;
         height: 0.81px;
-        background-color: $c-dark-green;
-        color: $c-dark-green;
+        background-color: $c-deep-red;
+        color: $c-deep-red;
         margin: 0;
         opacity: 0.3;
     }
@@ -104,7 +106,7 @@
     }
     &__price{
       margin-left: $m-base*.5;
-      color: $c-banana-sim-black;
+      color: $c-deep-red;
     }
     &__span{
       margin-left:$m-base*.5;
@@ -133,17 +135,20 @@
     &__title {
         font-size: 1rem;
         // font-weight: $fw-bold !important;
-        color: $c-dark-green;
+        color: $c-deep-red;
         font-weight: $fw-normal;
   
     }
+    &__total{
+      color: $c-deep-red;
+    }
     &__text {
-        color: $c-dark-green;
+        color: $c-deep-red;
         font-weight: $fw-normal;
     }
     &__span {
         font-weight: $fw-bold;
-        color: $c-dark-green;
+        color: $c-deep-red;
         font-weight: $fw-normal;
   
     }
@@ -160,26 +165,29 @@
    }
     &__btn__minus, &__btn__plus {
       text-align: center;
-      border: 1px solid $c-dark-green;
+      border: 1px solid $c-deep-red;
     }
     &__countOfProduct{
-              border: 1px solid $c-dark-green;
+              border: 1px solid $c-deep-red;
               padding: 0 $p-base*.4;
+    }
+    &__checkOutHolder{
+      margin: 0 auto;
     }
   
     &__checkOutBtn{
-      background-color: $c-dark-green;
+      background-color: $c-deep-red;
       border: none;
       border-radius: 7px;
-      padding: .6rem;
-      color: $c-white;
+      padding: .3rem;
+      color: #e6e1dd;
       font-weight: $fw-black;
       margin: 1.5rem auto;
       font-size: 0.9rem;
-      width: 130px;
+      width: 120px;
       @include laptop-l-query{
         margin: 10 auto;
-        width: 40%;
+        width:  120px;
       }
     }
     &__empty {
@@ -214,8 +222,17 @@
       height: 50px;
   }
   .pay__options{
-      width: 70%;
-     
+      width: 100%;
+      margin-top: 2rem;
+      @include tablet-query{
+        width:77%;
+      }
+      @include laptop-query{
+        width:100%;
+      }
+      @include laptop-l-query{
+        width:70%;
+      }
   
   &__list{
       @include flex-space-bteween;
@@ -225,6 +242,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+  }
+  &__item{
+  color: $c-deep-red;
   }
   }
   .fa__paypal,.fa__apple-pay,.fa-google-pay,.fa-cc-visa{
@@ -278,4 +298,43 @@
       transform: scale(1);
     }
   }
+  }
+  .shoping__cart__closed{
+  padding: 1rem;
+    margin: auto;
+    width:50;
+    height: 100vh;
+    background-color: #e6e1dd;;
+    @include font-family-normal;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    transform: translateX(400px);
+    transition: transform 1s ease;
+    scroll-behavior: smooth;
+    overflow: hidden scroll;
+    overscroll-behavior: contain;
+    &::-webkit-scrollbar {
+       width: 0;
+      background: transparent;
+  }
+  
+  
+    @include tablet-query {
+      width: 45%;
+        margin: 0 auto;
+        // right:78%;
+        transform: translateX(600px);
+  
+    }
+    @include laptop-query {
+      transform: translateX(440px);
+        width: 32%;
+        top: 100%;
+        margin: 0;
+    }
+    @include laptop-l-query {
+      transform: translateX(630px);
+      top: 100%;
+    }
   }

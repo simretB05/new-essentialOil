@@ -11,4 +11,4 @@ const Collection = () => (
   </>
 
 );
-export default  Collection; 
+export default Collection; 
