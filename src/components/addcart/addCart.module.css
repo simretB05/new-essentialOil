@@ -59,6 +59,11 @@ body {
   font-family: "Kumbh";
 }
 
+body.modal {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .content {
   padding: 5rem 0 0 0;
   min-height: 100%;
@@ -122,18 +127,18 @@ body {
 @media screen and (min-width: 768px) {
   .shoping__cart__close {
     top: 4px;
-    right: 312px;
+    right: 282px;
   }
 }
 @media screen and (min-width: 1020px) {
   .shoping__cart__close {
-    right: 290px;
+    right: 270px;
   }
 }
 @media screen and (min-width: 1440px) {
   .shoping__cart__close {
     top: 4px;
-    right: 415px;
+    right: 387px;
   }
 }
 .shoping__cart__close__img {
@@ -146,6 +151,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding-top: 2rem;
 }
 .shoping__cart__titlecart {
   font-weight: 900;

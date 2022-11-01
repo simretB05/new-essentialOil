@@ -11,7 +11,7 @@
     top: 80px;
     right: 0;
     transform: translateX(0px);
-    transition: transform 1s ease;
+    transition: transform .5s ease-in-out;
     scroll-behavior: smooth;
     overflow: hidden scroll;
     overscroll-behavior: contain;
@@ -53,16 +53,15 @@
       box-shadow: 2px 7px 10px  rgba(25, 24, 24, 0.2);
       @include tablet-query{
         top: 4px;
-        right: 312px;
+        right: 282px;
       }
       @include laptop-query{
-        right: 290px;
+        right: 270px;
 
       }
       @include laptop-l-query{
         top: 4px;
-        right: 415px;
-
+        right: 387px;
       }
   
     &__img{
@@ -76,6 +75,7 @@
         flex-direction: column;
         justify-content: center;
         align-content: center;
+        padding-top: 2rem;
     }
   
     &__titlecart {

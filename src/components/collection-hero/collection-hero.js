@@ -1,31 +1,39 @@
 import React from "react";
 import classes from '../collection-hero/collection-hero.module.scss';
-import { Link } from 'react-router-dom';
 import Review from '../reviwes/review';
-import data from '../../data/data';
-
 import CollectionProducts from '../collections-product/collections-products';
-const { products } = data;
-
-const CollectionHero = () => (
-
-    <> 
+import formatCurrency from "format-currency";
+import data from "../../data/data";
+function CollectionHero() {
+    const { products } = data;
+    let opts = { format: '%v %c', code: 'CAD' }
+    
+    return (
+            <>
         <div className={classes.products}>
             <h1 className={classes.products__title}>Products</h1>
         </div>
         <div>
-         {products.map((x) => {
+                {products.map((product) => {
              return (
                 
-                <CollectionProducts key={x.index} shortDiscription={x.shortDiscription} image={x.image } itemSize={x.itemSize} name={x.name} price={x.price} itemNumber={x.itemNumber} />
+                 <CollectionProducts
+                     ratingNum={product.NumReviews}
+                     ratingValue={product.rating}
+                     key={product.id}
+                     shortDiscription={product.shortDiscription}
+                     image={product.image}
+                     itemSize={product.itemSize}
+                     name={product.name} price={formatCurrency(`${product.price}`, opts)}
+                     itemNumber={product.itemNumber} />
         );
       })}
     </div>
     
-        <Review/>
+            <Review productValue={products } />
     </>
+        )
 
-
-);
+    };
 
 export default  CollectionHero;

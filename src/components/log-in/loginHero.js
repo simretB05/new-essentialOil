@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressCard, faAirFreshener } from '@fortawesome/free-solid-svg-icons';
+// import { faAddressCard, faAirFreshener } from '@fortawesome/free-solid-svg-icons';
 import classes from '../log-in/logInHero.module.scss';
 
 function LogInHero() {
@@ -19,7 +19,7 @@ function LogInHero() {
                             {/* <div className={classes.login__box}> */}
                                 {/* <div className={classes.login__box__boxCard}> */}
                                     <input  id="darkmode-toggle"type="checkbox" className={  classes.login__form}aria-label="dark mode btton" />
-                                    <label onClick={menuToggleHandlerBtn} className={ !toggleRegister?classes.login__form__boxBtn:classes.login__form__boxBtn__register} for="darkmode-toggle">
+                                    <label onClick={menuToggleHandlerBtn} className={ !toggleRegister?classes.login__form__boxBtn:classes.login__form__boxBtn__register} htmlFor="darkmode-toggle">
                                         <h3  type="text" className={ classes.login__form__boxBtn__toggleLogin}>Log In</h3>
                                         <h3 type="text" className={classes.login__form__boxBtn__toggleRegister}>Register</h3>
                                     </label>

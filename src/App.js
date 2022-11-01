@@ -1,4 +1,3 @@
-import Header from "./components/navbar/navbar";
 import Home from "./pages/Home";
 import About from "./pages/about-page";
 import Collection from "./pages/collection-page";
@@ -8,14 +7,15 @@ import ErrorPage from "./pages/ErrorPage";
 import SharedLayout from "./pages/shearedLayout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../src/styles/styles.scss"
-import { OpenMenuProvider } from "./components/menuOpen";
+import CartProvider from "./components/store/CartProvider";
 
 function App() {
+  
   return (
-    <OpenMenuProvider>
+    <CartProvider>
     <Router>
       <Routes>
-        <Route path="/" element={<SharedLayout />} >
+        <Route path="/" element={<SharedLayout  />} >
           <Route path="/" element={<Home />} />
           <Route path="/collection" exact element={<Collection />} />
           <Route path="/about-us" element={<About />} />
@@ -26,7 +26,7 @@ function App() {
         </Route>
       </Routes>
       </Router>
-      </OpenMenuProvider>
+    </CartProvider>
 
   );
 }

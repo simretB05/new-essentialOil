@@ -59,6 +59,11 @@ body {
   font-family: "Kumbh";
 }
 
+body.modal {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .content {
   padding: 5rem 0 0 0;
   min-height: 100%;
@@ -256,7 +261,7 @@ body {
 }
 @media screen and (min-width: 1020px) {
   .nav__list__description__link {
-    padding: 2.06rem 0;
+    padding: 1.96rem 0;
   }
 }
 .nav__list__description__link::after {

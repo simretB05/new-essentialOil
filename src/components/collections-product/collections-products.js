@@ -1,22 +1,37 @@
 import React from 'react'
+import {useState} from 'react';
+import classes from '../collections-product/collections-products.module.scss';
+import Rating from '../rating';
 
-import classes from '../collections-product/collections-products.module.scss'
     
 function CollectionProducts(props) {
-    const { name,price,itemNumber,itemSize ,image,shortDiscription} = props;
+
+    const [cartItem,setCartItems]=useState
+    // const inputRef = useRef();
+
+    const submitItem = () => {
+        
+        console.log(props)
+}
+    
     return (
+        <>
+           {/* ref={inputRef} */}
         <div className={classes.products__discription}>
                  
             <div id="pure" className={classes.pure}>
                 <div className={classes.product__section}>
-                        <h3 className={classes.pure__title}>{name}</h3>
+                        <h3 className={classes.pure__title}>{props.name}</h3>
                 </div>
             </div>
             <div className={classes.product__card}>
                 <div className={classes.product__card__img}>
-                    <img className={classes.product__card__img__container} src={image} alt="product_image"/>
+                    <img className={classes.product__card__img__container} src={props.image} alt="product_image"/>
                 </div>
                 <div className={classes.product__card__container}>
+                    <div className={classes.product__card__rating}>
+                        <Rating value={props.ratingValue} text={`${props.ratingNum} reviews`}  />
+                    </div>
                     <table className={classes.product__card__table}>
                         <tbody className={classes.product__card__body}>
                             <tr className={classes.product__card__table__row}>
@@ -24,7 +39,7 @@ function CollectionProducts(props) {
                                     <p>Item No.</p>
                                 </td>
                                 <td className={classes.product__card__table__data}>
-                                    <p className={classes.product__card__table__itemNo}>{itemNumber}</p>
+                                    <p className={classes.product__card__table__itemNo}>{props.itemNumber}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -32,7 +47,7 @@ function CollectionProducts(props) {
                                     <p>Item</p>
                                 </td>
                                 <td className={classes.product__card__table__data}>
-                                    <p className={classes.product__card__table__size}>{ itemSize}</p>
+                                    <p className={classes.product__card__table__size}>{props.itemSize}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -40,15 +55,16 @@ function CollectionProducts(props) {
                                     <p>Retail</p>
                                 </td>
                                 <td className={classes.product__card__table__data}>
-                                    <p className={classes.product__price}>{price} CAD</p>
+                                    <p className={classes.product__price}>{props.price}</p>
                                 </td>
+                                
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div className={classes.counter__section}>
-                <button className={classes.cart} data-product-id="1">
+                    <button onClick={ submitItem} className={classes.cart} data-product-id="1">
                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -57,7 +73,7 @@ function CollectionProducts(props) {
                 Add to cart
                 </button>
                 </div>
-            <p className={classes.product__card__copy}>{shortDiscription}.</p>
+            <p className={classes.product__card__copy}>{props.shortDiscription}.</p>
             <div className={classes.more__discription}>
                 <details className={classes.main__details}>
                     <summary className={classes.summary}> more discription</summary>
@@ -88,7 +104,7 @@ function CollectionProducts(props) {
                 </details>
             </div>
        </div>
-    
+    </>
     );
 }
 

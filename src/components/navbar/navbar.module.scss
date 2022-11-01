@@ -172,7 +172,7 @@
                     color: $c-deep-red;
                 }
                 @include laptop-query{
-                padding: $p-base*2.06 0;
+                padding: $p-base*1.96 0;
                 }
             }
             &__link::after{

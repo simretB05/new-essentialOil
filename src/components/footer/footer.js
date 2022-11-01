@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import classes from '../footer/footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTwitter,faFacebook } from '@fortawesome/free-brands-svg-icons';
