@@ -227,23 +227,27 @@ body.modal {
   font-size: 1.2rem;
   color: hsl(357.84deg, 88.99%, 42.75%);
 }
-.form__input__user {
-  width: 100%;
-  padding: 0.4rem;
-  margin: 5px 0;
-  border: 0.6px solid hsl(210deg, 4%, 67%);
-  border-radius: 3px;
-  outline: none;
-  background-color: transparent;
+.form__input__control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
 }
-.form__input__filed {
+.form__input__control__control input {
   width: 100%;
   padding: 0.4rem;
   margin: 5px 0;
-  border: 0.6px solid hsl(210deg, 4%, 67%);
   border-radius: 3px;
   outline: none;
   background-color: transparent;
+  flex: 3;
+}
+.form__input__control__control input:focus {
+  outline: none;
+  border-color: #4f005f;
+}
+.form__input__control .form__input__invalid input {
+  border-color: red;
 }
 .form__input__check__box {
   margin: 1rem;
@@ -300,4 +304,14 @@ body.modal {
 
 .slide {
   transform: translateX(120px);
+}
+
+button:disabled,
+button:focus:disabled,
+button:hover:disabled,
+button:active:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #666666;
+  cursor: not-allowed;
 }/*# sourceMappingURL=logInHero.module.css.map */

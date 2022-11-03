@@ -1,0 +1,34 @@
+@import "../../../styles/styles.scss";
+
+.main{
+  height: 100vh;
+  width: 100%;
+  margin: $m-base*2 auto;
+  width: 70%;
+  position: relative;
+  display: flex;
+  &__title{
+    @include font-family-normal;
+    font-weight: $fw-bold;
+    margin: 0;
+    font-size: 1.7rem;
+    color: $c-deep-red;
+    &::before{
+      content: "";
+      position: absolute;
+      background-color: $c-deep-red;
+      display: block;
+      height: 1px;
+      width: 100%;
+       }
+    &::after{
+      content: "";
+      position: absolute;
+      background-color: $c-deep-red;
+      display: block;
+      height: 1px;
+      width: 100%;
+    
+    }
+  }
+}

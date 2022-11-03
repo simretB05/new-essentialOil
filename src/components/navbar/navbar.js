@@ -7,7 +7,7 @@ import { useContext } from "react";
 import CartContextData from "../store/cart-context";
 
 
-function Navbar({products, cart, setCart }) {
+function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
 
   const CartCtx = useContext(CartContextData);
 
@@ -55,30 +55,60 @@ function Navbar({products, cart, setCart }) {
       </div>
       <nav className={classes.nav}>
         {/* <Modal open={menuOpen} > */}
-          <ul className={  menuOpen ?classes.navToggle__active:classes.nav__list}>
+        <ul className={menuOpen ? classes.navToggle__active : classes.nav__list}>
+          {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <NavLink className={ menuOpen? classes.nav__list__description__link: classes.nav__list__description__link} to="/collection">
+              <NavLink className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} to="/collection">
                 collection
               </NavLink>
             </li>
+          )}
+          {!isAuthenticated && (
             <li className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/contact-us">
                 contact-us
               </NavLink>
             </li>
+          )}
+          {!isAuthenticated && (
             <li className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/about-us">
                 Aobut-us
               </NavLink>
             </li>
+          )}
+          {isAuthenticated && (
+            <li className={classes.nav__list__description}>
+              <NavLink className={classes.nav__list__description__link} to="/user">
+                Users
+              </NavLink>
+            </li>
+          )}
+          {isAuthenticated && (
+            <li className={classes.nav__list__description}>
+              <NavLink className={classes.nav__list__description__link} to="/your-cart">
+                Your cart
+              </NavLink>
+            </li>
+          )}
+          {!isAuthenticated && (
             <li className={classes.nav__list__description__login}>
               <NavLink className={classes.nav__list__description__login__link} to="/log-in">
-                Log in
+                <button className={classes.nav__list__description__login__link} >Login</button>
+              </NavLink>
+            </li>
+          )}
+          {isAuthenticated && (
+            <li className={classes.nav__list__description__login}>
+              <NavLink className={classes.nav__list__description__login__link} to="/log-in">
+                <button onClick={onLogout} className={classes.nav__list__description__login__link} > Logout  </button>
+
               </NavLink>
               <NavLink className={classes.nav__list__description__link__img} to="/log-in">
                 <img className={classes.nav__list__description__login__link__img} src="../assets/images/avator-image.png" alt="avator_image" />
               </NavLink>
             </li>
+          )}
           </ul>
           {/* </Modal> */}
         <button className={classes.nav__cart} onClick={menuToggleHandlerCart } aria-label="Open menu" >
