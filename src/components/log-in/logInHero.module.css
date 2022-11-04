@@ -207,7 +207,7 @@ body.modal {
 
 .form__input {
   font-family: "Kumbh Sans";
-  top: 180px;
+  top: 30px;
   position: absolute;
   width: 100%;
   transition: 0.5s;
