@@ -233,38 +233,36 @@ body.modal {
   align-items: stretch;
   flex-direction: column;
 }
-.form__input__control__control input {
-  width: 100%;
-  padding: 0.4rem;
-  margin: 5px 0;
-  border-radius: 3px;
+
+.form__input__control input {
+  flex: 3 1;
+  font: inherit;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form__input__control input:focus {
   outline: none;
-  background-color: transparent;
-  flex: 3;
+  border-color: #0e0e0e;
+  background: hsl(26.67deg, 15.25%, 88.43%);
 }
-.form__input__control__control input:focus {
-  outline: none;
-  border-color: #4f005f;
+
+.form__input__control.form__input__invalid input {
+  border-color: hsl(357.84deg, 88.99%, 42.75%);
+  background: hsl(26.67deg, 15.25%, 88.43%);
 }
-.form__input__control .form__input__invalid input {
-  border-color: red;
+
+button:disabled,
+button:focus:disabled,
+button:hover:disabled,
+button:active:disabled {
+  background: hsl(26.67deg, 15.25%, 88.43%);
+  border-color: hsl(26.67deg, 15.25%, 88.43%);
+  color: hsl(210deg, 4%, 67%);
+  cursor: not-allowed;
 }
-.form__input__check__box {
-  margin: 1rem;
-}
-.form__input__check__span__login {
-  color: hsl(357.84deg, 88.99%, 42.75%);
-  font-size: 12px;
-  position: absolute;
-  bottom: 63px;
-  left: 8%;
-}
-.form__input__check__span__registration {
-  color: hsl(357.84deg, 88.99%, 42.75%);
-  font-size: 12px;
-  position: absolute;
-  bottom: 66px;
-}
+
 .form__input__submit__btn {
   width: 50%;
   padding: 9px 4px;
@@ -304,14 +302,4 @@ body.modal {
 
 .slide {
   transform: translateX(120px);
-}
-
-button:disabled,
-button:focus:disabled,
-button:hover:disabled,
-button:active:disabled {
-  background: #ccc;
-  border-color: #ccc;
-  color: #666666;
-  cursor: not-allowed;
 }/*# sourceMappingURL=logInHero.module.css.map */

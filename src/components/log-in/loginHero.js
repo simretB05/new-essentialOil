@@ -1,47 +1,105 @@
-import React, { useState } from "react";
+import React, { useState,useReducer,useEffect} from "react";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faAddressCard, faAirFreshener } from '@fortawesome/free-solid-svg-icons';
 import classes from '../log-in/logInHero.module.scss';
+//deffining our actions
+const emailReducer = (state, action) => {
+    if (action.type === 'USER_INPUT') {
+      return { value: action.val, isValid: action.val.includes('@') };
+    }
+    if (action.type === 'INPUT_BLUR') {
+      return { value: state.value, isValid: state.value.includes('@') };
+    }
+    return { value: '', isValid: false };
+}; 
+const passwordReducer = (state, action) => {
+    if (action.type === 'USER_INPUT') {
+      return { value: action.val, isValid: action.val.trim().length > 6 };
+    }
+    if (action.type === 'INPUT_BLUR') {
+      return { value: state.value, isValid: state.value.trim().length > 6 };
+    }
+    return { value: '', isValid: false };
+};
+  
 
 function LogInHero({isAuthenticated,onLogin,onLogout}) {
     const [toggleRegister, setToggleRegister] = useState(false);
-    const [enteredEmail, setEnteredEmail] = useState('');
-    const [emailIsValid, setEmailIsValid] = useState(false);
-    const [enteredPassword, setEnteredPassword] = useState('');
-    const [passwordIsValid, setPasswordIsValid] = useState(false);
+    // const [enteredEmail, setEnteredEmail] = useState('');
+    // const [emailIsValid, setEmailIsValid] = useState();
+    // const [enteredPassword, setEnteredPassword] = useState('');
+    // const [passwordIsValid, setPasswordIsValid] = useState(false);
     const [formIsValid, setFormIsValid] = useState(false);
+
+//using Reducer email
+const [emailState, dispatchEmail] = useReducer(emailReducer, {
+    value: '',
+    isValid: null,
+});
+//using pasward reducer 
+    
+const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
+    value: '',
+    isValid: null,
+});
+   //using  effect
+    
+ const { isValid: emailIsValid } = emailState;
+const { isValid: passwordIsValid } = passwordState;
+useEffect(() => {
+    const identifier = setTimeout(() => {
+      console.log('Checking form validity!');
+      setFormIsValid(emailIsValid && passwordIsValid);
+    }, 500);
+
+    return () => {
+      console.log('CLEANUP');
+      clearTimeout(identifier);
+    };
+  }, [emailIsValid, passwordIsValid]);
+  //handling the email input value with a dispature inside a function with a type and payload
+    const emailChangeHandler = (event) => {
+        dispatchEmail({type: 'USER_INPUT', val: event.target.value});
+    
+    //     setFormIsValid(
+    //       event.target.value.includes('@') && passwordState.isValid
+    //     );
+      };
+    
+      const passwordChangeHandler = (event) => {
+        // setEnteredPassword(event.target.value);
+        dispatchPassword({ type: 'USER_INPUT', val: event.target.value });
+
+    
+        // setFormIsValid(
+        //   emailState.isValid && event.target.value.trim().length > 6
+        // );
+      };
+    
+      const validateEmailHandler = () => {
+        dispatchEmail({type: 'INPUT_BLUR'});
+      };
+    
+    //previous
+    //   const validatePasswordHandler = () => {
+    //     setPasswordIsValid(enteredPassword.trim().length > 6);
+    //   };
+    
+      const validatePasswordHandler = () => {
+        dispatchPassword({ type: 'INPUT_BLUR' });
+    };
+    
+      const submitHandler = (event) => {
+        event.preventDefault();
+        onLogin(emailState.value, passwordState.value);
+    };
+
+
+    //handling toogle button for login and registration 
     const menuToggleHandlerBtn = () => {
         console.log('yay')
         setToggleRegister((x) => !x);
     };
-    const emailChangeHandler = (event) => {
-        setEnteredEmail(event.target.value);
-    
-        setFormIsValid(
-          event.target.value.includes('@') && enteredPassword.trim().length > 6
-        );
-      };
-    
-      const passwordChangeHandler = (event) => {
-        setEnteredPassword(event.target.value);
-    
-        setFormIsValid(
-          event.target.value.trim().length > 6 && enteredEmail.includes('@')
-        );
-      };
-    
-      const validateEmailHandler = () => {
-        setEmailIsValid(enteredEmail.includes('@'));
-      };
-    
-      const validatePasswordHandler = () => {
-        setPasswordIsValid(enteredPassword.trim().length > 6);
-      };
-    
-      const submitHandler = (event) => {
-        event.preventDefault();
-        onLogin(enteredEmail, enteredPassword);
-      };
     return(
         <div className={classes.content}>
             <div className={classes.section}>
@@ -56,7 +114,7 @@ function LogInHero({isAuthenticated,onLogin,onLogout}) {
                                 {toggleRegister ? (
                                 <form id="regiter-btn" className={classes.form__input}>
                                     <h2 className={classes.form__input__title}>Register</h2>
-                                    <div className={ emailIsValid === false ?classes.form__input__control: classes.form__input__invalid }>
+                                    <div className={`${classes.form__input__control} ${emailState.isValid === false ?classes.form__input__invalid:''}` }>
                                         <input
                                             type="email"
                                             className={classes.form__input__filed}
@@ -64,7 +122,7 @@ function LogInHero({isAuthenticated,onLogin,onLogout}) {
                                             placeholder="Enter Email Address" required
                                         />
                                     </div>
-                                    <div className={ !passwordIsValid === false ?classes.form__input__control: classes.form__input__invalid }>
+                                    <div className={`${classes.form__input__control} ${emailState.isValid === false ?classes.form__input__invalid:''}` }>
                                         <input
                                             type="text"
                                             className={classes.form__input__filed}
@@ -78,22 +136,22 @@ function LogInHero({isAuthenticated,onLogin,onLogout}) {
                                 ) : (
                                     <form onSubmit={submitHandler} id="login-btn" className={classes.form__input}>
                                         <h2 className={classes.form__input__title}>Log in</h2>
-                                        <div className={ emailIsValid === true ?classes.form__input__control: classes.form__input__invalid }>
+                                        <div className={`${classes.form__input__control} ${emailState.isValid === false ?classes.form__input__invalid:''}` }>
                                             <input
                                                 type="text"
                                                 placeholder="Enter Email Address"
                                                 id="userSIEmail" required
-                                                value={enteredEmail}
+                                                value={emailState.value}
                                                 onChange={emailChangeHandler}
                                                 onBlur={validateEmailHandler}
                                             />
                                         </div>
-                                        <div className={ passwordIsValid  === true ?classes.form__input__control: classes.form__input__invalid }>
+                                        <div className={`${classes.form__input__control} ${passwordState.isValid === false ?classes.form__input__invalid:''}` }>
                                             <input
-                                                type="text"
+                                                type="password"
                                                 placeholder="Enter password" id="userSIPassword"
                                                 required
-                                                value={enteredPassword}
+                                                value={passwordState.value}
                                                 onChange={passwordChangeHandler}
                                                 onBlur={validatePasswordHandler}
                                             />

@@ -239,6 +239,7 @@
     width: 8.4rem;
     text-align: center;
     border: 1px solid $c-deep-red;
+   
     &:hover{
         color: $c-deep-red;
         background-color: $c-deep-red;
@@ -282,7 +283,10 @@
         }
     }
 }
-
+button{ 
+    background-color: transparent;
+    border: none;
+}
 
 .overlay {
     &::before {

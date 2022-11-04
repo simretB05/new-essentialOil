@@ -377,6 +377,11 @@ body.modal {
   }
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .overlay::before {
   content: "";
   opacity: 0.77;

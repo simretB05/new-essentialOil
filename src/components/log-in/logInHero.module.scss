@@ -126,6 +126,7 @@ padding: 3rem;
     position: relative;
 
 }
+
 .form__input{
     @include font-family-normal;
     top:180px;
@@ -145,49 +146,42 @@ transform: translateX(0);
 }
 &__control{
     margin: 1rem 0;
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-&__control input{
-    width:100%;
-    padding:$p-base*.4 ;
-    margin: 5px 0;
-    // border: .6px solid $c-grayish-blue;
-    border-radius: 3px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+}
+.form__input__control input {
+    flex: 3 1;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.form__input__control input:focus {
     outline: none;
-    background-color: transparent;
-    flex: 3;
-//   font: inherit;
-//   padding: 0.35rem 0.35rem;
-//   border-radius: 6px;
-//   border: 1px solid #ccc;
-//     display: block;
+    border-color:$c-banana-sim-black;
+    background: $c-new-back-ground-color;
+  }
+
+  .form__input__control.form__input__invalid input {
+    border-color: $c-deep-red;
+    background: $c-new-back-ground-color;
+  }
+
+button:disabled,
+button:focus:disabled,
+button:hover:disabled,
+button:active:disabled {
+background: $c-new-back-ground-color;
+border-color:$c-new-back-ground-color;
+color: $c-grayish-blue;
+cursor: not-allowed;
 }
-&__control input:focus{
-    outline: none;
-    border-color: #4f005f;
-}
-}
-&__control .form__input__invalid input{
-    border-color: red;
-}
-&__check__box{
-    margin: $m-base;
-}
-&__check__span__login{
- color: $c-deep-red;
- font-size:12px;
- position: absolute;
- bottom: 63px;
- left:8%;
-}
-&__check__span__registration{
-    color: $c-deep-red;
-    font-size:12px;
-    position: absolute;
-    bottom: 66px;
-   }
-&__submit__btn{
+
+
+
+.form__input__submit__btn{
     width:50%;
     padding: 9px 4px;
     cursor: pointer;
@@ -203,7 +197,7 @@ transform: translateX(0);
         width:60%;
     }
 }
-}
+
 #login__btn{
     left: 20px;
 }
@@ -220,13 +214,4 @@ transform: translateX(0);
 }
 .slide{
     transform: translateX(120px);
-}
-button:disabled,
-button:focus:disabled,
-button:hover:disabled,
-button:active:disabled {
-  background: #ccc;
-  border-color: #ccc;
-  color: #666666;
-  cursor: not-allowed;
 }
