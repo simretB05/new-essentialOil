@@ -79,6 +79,13 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
           )}
           {isAuthenticated && (
             <li className={classes.nav__list__description}>
+              <NavLink className={classes.nav__list__description__link} to="/log-in">
+                Login Home
+              </NavLink>
+            </li>
+          )}
+          {isAuthenticated && (
+            <li className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/user">
                 Users
               </NavLink>

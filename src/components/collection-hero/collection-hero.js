@@ -4,6 +4,8 @@ import Review from '../reviwes/review';
 import CollectionProducts from '../collections-product/collections-products';
 import formatCurrency from "format-currency";
 import data from "../../data/data";
+
+
 function CollectionHero() {
     const { products } = data;
     let opts = { format: '%v %c', code: 'CAD' }
@@ -24,7 +26,8 @@ function CollectionHero() {
                      shortDiscription={product.shortDiscription}
                      image={product.image}
                      itemSize={product.itemSize}
-                     name={product.name} price={formatCurrency(`${product.price}`, opts)}
+                     name={product.name}
+                     price={formatCurrency(`${product.price}`, opts)}
                      itemNumber={product.itemNumber} />
         );
       })}

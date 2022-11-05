@@ -1,10 +1,13 @@
 import React from 'react'
-import YourCart from '../components/YourCart/YourCart'
+import YourCart from '../components/log-in/YourCart/YourCart'
 
 function YourCartPage() {
   return (
     <>
-          <YourCart/>
+      <section className='content'>
+
+        <YourCart />
+        </section>
 
     </>
   )

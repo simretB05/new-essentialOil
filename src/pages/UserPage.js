@@ -1,11 +1,14 @@
 import React from 'react'
-import Users from '../components/Users/Users';
+import Users from '../components/log-in/Users/Users';
 
 function UserPage() {
   return (
 
     <>
-      <Users/>
+      <section className='content'>
+
+        <Users />
+        </section>
     </>
   )
 }

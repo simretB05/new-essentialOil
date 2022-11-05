@@ -14,7 +14,7 @@
     @include flex-space-bteween;
     position: absolute;
     top:20%;
-    z-index: 10;
+    z-index: 1;
     padding: 1rem;
     @include tablet-query{
       top:40%;

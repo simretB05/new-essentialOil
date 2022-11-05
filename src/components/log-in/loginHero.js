@@ -102,7 +102,10 @@ useEffect(() => {
     };
     return(
         <div className={classes.content}>
-            <div className={classes.section}>
+        <div className={classes.section}>
+                  <main className={classes.main}>
+                  <h1 className={classes.main__title}>Log in to access your cart and profile information!</h1>
+                </main>
                 <div className={classes.section__main}>
                         <div id="login-form" className={classes.login}>
                             <input  id="darkmode-toggle"type="checkbox" className={  classes.login__form}aria-label="dark mode btton" />

@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from "uuid"
 
 import { Link } from 'react-router-dom';
 const Review = (products, color) => {
-    console.log(products)
 
     return (
         <div id="reviews-section" className={classes.reviwe}>
