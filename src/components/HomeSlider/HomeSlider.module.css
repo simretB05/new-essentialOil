@@ -78,7 +78,7 @@ body.modal {
 }
 @media screen and (min-width: 1020px) {
   .container {
-    height: 680px;
+    height: 68vh;
   }
 }
 .container__btn {
