@@ -2,13 +2,11 @@ import React from "react";
 import classes from '../collection-hero/collection-hero.module.scss';
 import Review from '../reviwes/review';
 import CollectionProducts from '../collections-product/collections-products';
-import formatCurrency from "format-currency";
 import data from "../../data/data";
 
 
 function CollectionHero() {
     const { products } = data;
-    let opts = { format: '%v %c', code: 'CAD' }
     
     return (
             <>
@@ -20,15 +18,17 @@ function CollectionHero() {
              return (
                 
                  <CollectionProducts
-                     ratingNum={product.NumReviews}
-                     ratingValue={product.rating}
+                     product={product}
+                    //  ratingNum={product.NumReviews}
+                    //  ratingValue={product.rating}
                      key={product.id}
-                     shortDiscription={product.shortDiscription}
-                     image={product.image}
-                     itemSize={product.itemSize}
-                     name={product.name}
-                     price={formatCurrency(`${product.price}`, opts)}
-                     itemNumber={product.itemNumber} />
+                    //  shortDiscription={product.shortDiscription}
+                    //  image={product.image}
+                    //  itemSize={product.itemSize}
+                    //  name={product.name}
+                    //  price={formatCurrency(`${product.price}`, opts)}
+                 //  itemNumber={product.itemNumber} 
+                 />
         );
       })}
     </div>

@@ -45,6 +45,7 @@ const data = {
       image: "../../assets/images/green.jpg",
       price: 11.99,
       rating: 5,
+      NumReviews: 28,
       shortDiscription:"Tea tree oil, also known as melaleuca oil, is an essential oil that comes from steaming the leaves of the Australian tea tree. When used topically, tea tree oil is believed to be antibacterial. Tea tree oil is commonly used to treat acne, athlete's foot, lice, nail fungus and insect bites"
    
     },
@@ -56,7 +57,7 @@ const data = {
       image: "../../assets/images/essentialOils.jpg",
       price: 16.99,
       rating: 0,
-      NumReviews: 49,
+      NumReviews: 0,
       shortDiscription:"unflower seeds have the power to nourish the entire body. They are a rich source of easily digestible and assimilable protein which is essential for the repair of tissues, nerves, and cells.",
     },
  

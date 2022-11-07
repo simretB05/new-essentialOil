@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useContext  } from "react";
 import {NavLink} from 'react-router-dom';
 import classes from "../navbar/navbar.module.scss";
 import AddCart from '../addcart/addCart'
 import Modal from "./Modal";
-import { useContext } from "react";
 import CartContextData from "../store/cart-context";
 
 
