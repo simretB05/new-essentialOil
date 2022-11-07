@@ -5,7 +5,7 @@
   height: 100%;
  @include flex-center;
   @include laptop-query{
-    height: 680px;
+    height: 68vh;
   }
   &__btn{
     width: 100%;

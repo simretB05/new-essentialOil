@@ -77,7 +77,7 @@ body.modal {
 .section__main {
   border: 2px solid hsl(357.84deg, 88.99%, 42.75%);
   width: 90%;
-  height: 60vh;
+  height: 70%;
   margin: 0 auto;
 }
 @media screen and (min-width: 1020px) {
