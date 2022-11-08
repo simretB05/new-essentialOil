@@ -77,16 +77,16 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
           )}
           {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <a className={classes.nav__list__description__link} href="/contact-us">
+              <NavLink className={classes.nav__list__description__link} to="/contact-us">
                 contact-us
-              </a>
+              </NavLink>
             </li>
           )}
           {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <a className={classes.nav__list__description__link} href="/about-us">
+              <NavLink className={classes.nav__list__description__link} to="/about-us">
                 Aobut-us
-              </a>
+              </NavLink>
             </li>
           )}
           {isAuthenticated && (
@@ -112,14 +112,14 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
           )}
           {!isAuthenticated && (
             <li className={classes.nav__list__description__login}>
-              <a className={classes.nav__list__description__login__link} href="/log-in">
+              <NavLink className={classes.nav__list__description__login__link} to="/log-in">
                 <button className={classes.nav__list__description__login__link} >Login</button>
-              </a>
+              </NavLink>
             </li>
           )}
           {isAuthenticated && (
             <li className={classes.nav__list__description__login}>
-              <NavLink className={classes.nav__list__description__login__link} href="/log-in">
+              <NavLink className={classes.nav__list__description__login__link} to="/log-in">
                 <button onClick={onLogout} className={classes.nav__list__description__login__link} > Logout  </button>
 
               </NavLink>
