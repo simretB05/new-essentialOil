@@ -19,7 +19,8 @@ const cartReducer = (state, action) => {
     if (existingCartItem) {
       const updatedItem = {
         ...existingCartItem,
-        qty: existingCartItem.qty + action.item.qty,
+        //made changes by removing .action.qty
+        qty: existingCartItem.qty + action.item.qty ,
       };
       updatedItems = [...state.items];
       updatedItems[existingCartItemIndex] = updatedItem;
@@ -76,6 +77,9 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
+
+
+  
   return  <CartContextData.Provider value={CartContext}>
 {props.children}
   </CartContextData.Provider>

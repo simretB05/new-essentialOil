@@ -387,7 +387,7 @@ body.modal {
   color: hsl(0deg, 0%, 100%);
   text-transform: capitalize;
   font-weight: 700;
-  z-index: 3;
+  z-index: 1;
 }
 @media screen and (min-width: 1020px) {
   .card__btn__pure {

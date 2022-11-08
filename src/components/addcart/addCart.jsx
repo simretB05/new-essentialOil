@@ -12,7 +12,7 @@ const AddCart = (props) => {
 	
 	const { items, addItem, removeItem, totalAmount } = useContext(CartContextData);
 	const CartCtx  = useContext(CartContextData);
-  console.log(typeof(items))
+  console.log(typeof(CartCtx))
 	const { onMenuOpenCarts, onHideCart, onMenuOpen,product } = props;
 	let opts = { format: '%v %c', code: 'CAD' }
 	const [menuCloseCart, setMenuCloseCart] = useState(false);
@@ -22,11 +22,14 @@ const AddCart = (props) => {
 
 	const hasItems = CartCtx.items.length > 0;
 
-	const onAddBtn = (count) => {
-		// CartCtx.items.find((x) => x.id === CartCtx.items.id);
+	const onAddBtn = (item) => {
+    CartCtx.addItem({ ...item, qty: 1 });
 	
  }
-
+  
+ const onRemoveBtn = (id) => {
+	CartCtx.removeItem(id);
+};
 	return (
 		<Modal onClose={ onHideCart}>
 			
@@ -56,15 +59,15 @@ const AddCart = (props) => {
 												<div className={classes.shoping__cart__text__container}>
 													<h3 className={classes.shoping__cart__title}>{x.name}</h3>
 													<span className={classes.shoping__cart__total}>
-														{formatCurrency(`${x.price * count * x.qty} opts`)}
+														{formatCurrency(`${x.price*x.qty} opts`)}
 													</span>
 													<span className={classes.shoping__cart__span}>CAD</span>
 												</div>
 											</div>
 											<div className={classes.shoping__cart__counter}>
-												<button className={classes.shoping__cart__btn__minus} >-</button>
-												<span className={classes.shoping__cart__countOfProduct}>{count}</span>
-												<button className={classes.shoping__cart__btn__plus}  onClick={ onAddBtn}>+</button>
+												<button className={classes.shoping__cart__btn__minus}onClick={onRemoveBtn.bind(null, x.id)} >-</button>
+												<span className={classes.shoping__cart__countOfProduct}>{x.qty}</span>
+												<button className={classes.shoping__cart__btn__plus}  onClick={ onAddBtn.bind(null,x)}>+</button>
 											</div>
 										</div>
 									</li>
@@ -75,7 +78,7 @@ const AddCart = (props) => {
 						)}
 				<div className={classes.shoping__cart__subTotal}>
 					<p className={classes.shoping__cart__text}>SubTotal
-								<span className={classes.shoping__cart__price}>{totalAmounts*count}</span>
+								<span className={classes.shoping__cart__price}>{totalAmounts}</span>
 						<span className={classes.shoping__cart__span}>CAD</span>
 					</p>
 				</div>
