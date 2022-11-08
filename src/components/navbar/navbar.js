@@ -53,7 +53,7 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
         <ul className={menuOpen ? classes.navToggle__active : classes.nav__list}>
           {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <a className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} href="/collection">
+              <NavLink className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} to="/collection">
                 collection
                 <u className={classes['sub-list']}>
                   <li className={classes['sub-list__item']} >
@@ -72,7 +72,7 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
                     <a href="#">Tea Tree Essential oil</a>
                   </li>
                   </u>
-              </a>
+              </NavLink>
             </li>
           )}
           {!isAuthenticated && (
