@@ -12,83 +12,20 @@ const AddCart = (props) => {
 	
 	const { items, addItem, removeItem, totalAmount } = useContext(CartContextData);
 	const CartCtx  = useContext(CartContextData);
-console.log(typeof(CartCtx.items))
+  console.log(typeof(items))
 	const { onMenuOpenCarts, onHideCart, onMenuOpen,product } = props;
 	let opts = { format: '%v %c', code: 'CAD' }
-
-	// const [menuCloseCart, setMenuCloseCart] = useState(false);
-
-	// const closeToggleHandlerCart = () => {
-	// console.log('nay')
-	// setMenuCloseCart((z) => !z);
-
-	// };
-	// const numberofcartItems = CartCtx.items.reduce((currNumber, item) => { 
-  //   return currNumber + item.qty;
-  // }, 0);
+	const [menuCloseCart, setMenuCloseCart] = useState(false);
 	const totalAmounts = `${totalAmount.toFixed(2)}`;
-	console.log(typeof(items))
+
+	const [count, setCount] = useState()
+
 	const hasItems = CartCtx.items.length > 0;
 
-  // const cartItemRemoveHandler = (id) => {
-	// 	console.log(typeof(items))
-		
-
-	// };
-
-
-	const [count, setCount] = useState(1)
+	const onAddBtn = (count) => {
+		// CartCtx.items.find((x) => x.id === CartCtx.items.id);
 	
-	const onAddBtn = (item) => {
-		// addItem({ ...item, qty: 1 });
-		const exist = items.find((x) => x.id === item.id);
-		console.log(exist.qty)
-    // if (exist) {
-    //   setCount(
-    //     CartCtx.items.map((i) =>
-    //       i.id === item.id ? { ...exist, qty: item.qty++ } : i
-
-    //     )
-
-    //   );
-    //   console.log(item)
-
-    // } else {
-    //   setCount([...CartCtx.items, { ...item, qty: 0 }]);
-    // }
-  };
-	  
-	const cartItemRemoveHandler = (id) => {
-  removeItem(id);
-  };
-	// const onAddBtn = (item) => {
-	// 	setCount((x)=>x+1)
-	// 	addItem({ ...item, qty: 1 });
-		
-		
-	// 	};
-
-		
-	
-
-	
-	// const onRemoveBtn = (x) => {
-
-	// 	if (count <= 0) {
-	// 		return setCount((x) => x - 1)
-	// 	}
-   
-	// }
-
-// 	const cartItemAddHandler = (item) => {
-// 		for (let i in item)
-// 		console.log(item);
-// }
-  
-// 	const [addBtn, setAddBtn] = useState(0)
-	
-	
-	
+ }
 
 	return (
 		<Modal onClose={ onHideCart}>
@@ -125,14 +62,14 @@ console.log(typeof(CartCtx.items))
 												</div>
 											</div>
 											<div className={classes.shoping__cart__counter}>
-												<button className={classes.shoping__cart__btn__minus} onClick={cartItemRemoveHandler}>-</button>
+												<button className={classes.shoping__cart__btn__minus} >-</button>
 												<span className={classes.shoping__cart__countOfProduct}>{count}</span>
-												<button className={classes.shoping__cart__btn__plus} onClick={onAddBtn} >+</button>
+												<button className={classes.shoping__cart__btn__plus}  onClick={ onAddBtn}>+</button>
 											</div>
 										</div>
 									</li>
 								</ul>
-																))}
+					))}
 
 								</div>
 						)}
@@ -145,7 +82,7 @@ console.log(typeof(CartCtx.items))
 						
 				<hr className={classes.shoping__cart__hr} />
 				<div className={classes.shoping__cart__checkOutHolder}>
-					<NavLink to="/your-cart"><button className={classes.shoping__cart__checkOutBtn}>Checkout</button></NavLink>
+					<a href="#"><button className={classes.shoping__cart__checkOutBtn}>Checkout</button></a>
 						</div>
 						</div>
 			</div>

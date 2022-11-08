@@ -16,7 +16,6 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
 
   const [menuOpen, setMenuOpen] = useState(false)
   function menuToggleHandler(e) {
-        console.log("yaye")
         e.preventDefault()
               setMenuOpen((p) => !p);
               
@@ -26,13 +25,11 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
   
   
   const menuToggleHandlerCart = () => {
-    console.log('yay')
     
     setMenuOpenCart(true);
   };
 
   const HidemenuToggleHandlerCart = () => {
-    console.log('Nay')
     
     setMenuOpenCart(false);
   };
@@ -56,7 +53,7 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
         <ul className={menuOpen ? classes.navToggle__active : classes.nav__list}>
           {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <NavLink className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} to="/collection">
+              <a className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} href="/collection">
                 collection
                 <u className={classes['sub-list']}>
                   <li className={classes['sub-list__item']} >
@@ -75,21 +72,21 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
                     <a href="#">Tea Tree Essential oil</a>
                   </li>
                   </u>
-              </NavLink>
+              </a>
             </li>
           )}
           {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <NavLink className={classes.nav__list__description__link} to="/contact-us">
+              <a className={classes.nav__list__description__link} href="/contact-us">
                 contact-us
-              </NavLink>
+              </a>
             </li>
           )}
           {!isAuthenticated && (
             <li className={classes.nav__list__description}>
-              <NavLink className={classes.nav__list__description__link} to="/about-us">
+              <a className={classes.nav__list__description__link} href="/about-us">
                 Aobut-us
-              </NavLink>
+              </a>
             </li>
           )}
           {isAuthenticated && (
@@ -115,20 +112,20 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
           )}
           {!isAuthenticated && (
             <li className={classes.nav__list__description__login}>
-              <NavLink className={classes.nav__list__description__login__link} to="/log-in">
+              <a className={classes.nav__list__description__login__link} href="/log-in">
                 <button className={classes.nav__list__description__login__link} >Login</button>
-              </NavLink>
+              </a>
             </li>
           )}
           {isAuthenticated && (
             <li className={classes.nav__list__description__login}>
-              <NavLink className={classes.nav__list__description__login__link} to="/log-in">
+              <NavLink className={classes.nav__list__description__login__link} href="/log-in">
                 <button onClick={onLogout} className={classes.nav__list__description__login__link} > Logout  </button>
 
               </NavLink>
-              <NavLink className={classes.nav__list__description__link__img} to="/log-in">
+              <a className={classes.nav__list__description__link__img} href="/log-in">
                 <img className={classes.nav__list__description__login__link__img} src="../assets/images/avator-image.png" alt="avator_image" />
-              </NavLink>
+              </a>
             </li>
           )}
           </ul>
