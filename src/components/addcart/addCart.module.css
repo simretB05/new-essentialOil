@@ -107,6 +107,7 @@ body.modal {
 }
 @media screen and (min-width: 1440px) {
   .shoping__cart {
+    height: 25vw;
     top: 100%;
   }
 }

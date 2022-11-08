@@ -319,3 +319,47 @@ button{
     background-color: $c-new-back-ground-color;
     border: none;
 }
+.sub-list{
+    display: none;
+}
+.nav__list__description:hover .sub-list{
+    width: 17rem;
+    height: 181px;
+    @include flex-space-bteween;
+    padding: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+    text-transform:capitalize;
+
+    @include laptop-query{
+    width: 17rem;
+    position: absolute;
+    right: 0;
+    background-color: hsl(26.67deg, 15.25%, 88.43%);
+    z-index: 5;
+    @include flex-space-bteween;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+    }
+}
+.sub-list__item{
+    &:hover {
+        transform: translateX(9px);
+        color: $c-deep-red
+    }
+
+}
+.sub-list a{
+    text-decoration: none;
+    color: $c-deep-red;
+    
+}
+.sub-list a:hover{
+    text-decoration: none;
+    color: $c-banana-sim-black;
+}

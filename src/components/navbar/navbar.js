@@ -9,9 +9,8 @@ import CartContextData from "../store/cart-context";
 function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
 
   const CartCtx = useContext(CartContextData);
-
   const numberofcartItems = CartCtx.items.reduce((currNumber, item) => { 
-    return currNumber + item.amount;
+    return currNumber + item.qty;
   }, 0);
 
 
@@ -59,6 +58,23 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
             <li className={classes.nav__list__description}>
               <NavLink className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} to="/collection">
                 collection
+                <u className={classes['sub-list']}>
+                  <li className={classes['sub-list__item']} >
+                    <a href="#">Lavender Essential Oil</a>
+                  </li>
+                  <li className={classes['sub-list__item']}>
+                    <a href="#">Peppermint Essential Oil</a>
+                  </li>
+                  <li className={classes['sub-list__item']}>
+                    <a href="#">Lemon Essential oil</a>
+                  </li>
+                  <li className={classes['sub-list__item']}>
+                    <a href="#">Sun Flower Essential oil</a>
+                  </li>
+                  <li className={classes['sub-list__item']}>
+                    <a href="#">Tea Tree Essential oil</a>
+                  </li>
+                  </u>
               </NavLink>
             </li>
           )}

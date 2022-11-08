@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 import classes from "./YourCart.module.scss"
 import CartContextData from '../../store/cart-context';
 import formatCurrency from "format-currency";
@@ -12,7 +12,9 @@ function YourCart() {
   let opts = { format: '%v %c', code: 'CAD' }
   const hasItems = items.length > 0;
 
-
+	const [count, setCount] = useState(hasItems)
+	
+	
   return (
 <div className={classes.content}>
       <main className={classes.main}>
@@ -32,15 +34,15 @@ function YourCart() {
 												<div className={classes.shoping__cart__text__container}>
 													<h3 className={classes.shoping__cart__title}>{ x.name}</h3>
 													<span className={classes.shoping__cart__total}>
-														{formatCurrency(`${x.price*items.length } opts`)}
+														{formatCurrency(`${x.price*count } opts`)}
 													</span>
 													<span className={classes.shoping__cart__span}>CAD</span>
 												</div>
 											</div>
 											<div className={classes.shoping__cart__counter}>
-												<button className={classes.shoping__cart__btn__minus} >-</button>
-												<span className={classes.shoping__cart__countOfProduct}>{ }</span>
-												<button className={classes.shoping__cart__btn__plus}>+</button>
+												<button className={classes.shoping__cart__btn__minus}>-</button>
+												<span className={classes.shoping__cart__countOfProduct}>{count}</span>
+												<button className={classes.shoping__cart__btn__plus} >+</button>
 											</div>
 										</div>
 									</li>

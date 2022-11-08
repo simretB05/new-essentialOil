@@ -88,12 +88,37 @@ useEffect(() => {
       const validatePasswordHandler = () => {
         dispatchPassword({ type: 'INPUT_BLUR' });
     };
-    
-      const submitHandler = (event) => {
-        event.preventDefault();
-        onLogin(emailState.value, passwordState.value);
+    const enteredEmail = emailState.value;
+    const enteredPassword =  passwordState.value;
+  const submitHandler = (event) => {
+    if (toggleRegister) {
+      event.preventDefault();
+      onLogin(emailState.value, passwordState.value);
+    } else {
+      fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCaK2R-HAo3Lfbm4YaWZxPevIV2_xA6jOk',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            email: enteredEmail,
+            password: enteredPassword,
+            returnSecureToken: true,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      ).then((res) => {
+        if (res.ok) {
+          // ...
+        } else {
+          return res.json().then((data) => {
+            // show an error modal
+            console.log(data);
+          });
+        }
+      });
     };
-
+  }
 
     //handling toogle button for login and registration 
     const menuToggleHandlerBtn = () => {
@@ -120,21 +145,25 @@ useEffect(() => {
                                     <div className={`${classes.form__input__control} ${emailState.isValid === false ?classes.form__input__invalid:''}` }>
                                         <input
                                             type="email"
-                                            className={classes.form__input__filed}
                                             id="userEmail"
                                             placeholder="Enter Email Address" required
+                                            value={emailState.value}
+                                            onChange={emailChangeHandler}
+                                            onBlur={validateEmailHandler}
+                                            
                                         />
                                     </div>
                                     <div className={`${classes.form__input__control} ${emailState.isValid === false ?classes.form__input__invalid:''}` }>
                                         <input
                                             type="text"
-                                            className={classes.form__input__filed}
                                             id="userPassword"
                                             placeholder="Enter password"
                                             required
+                                            onChange={passwordChangeHandler}
+                                            onBlur={validatePasswordHandler}
                                         />
                                     </div>
-                                    <button type="submit" id="submitData" className={classes.form__input__submit__btn}>Create Account</button>
+                                    <button type="submit" id="submitData"  className={classes.form__input__submit__btn}>Create Account</button>
                                 </form>
                                 ) : (
                                     <form onSubmit={submitHandler} id="login-btn" className={classes.form__input}>

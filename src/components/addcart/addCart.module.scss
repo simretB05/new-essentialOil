@@ -40,6 +40,8 @@
     }
     @include laptop-l-query {
     //   transform: translateX(630px);
+    height: 25vw;
+
       top: 100%;
     }
     &__close{

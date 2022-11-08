@@ -422,4 +422,54 @@ button {
 .nav__cart {
   background-color: hsl(26.67deg, 15.25%, 88.43%);
   border: none;
+}
+
+.sub-list {
+  display: none;
+}
+
+.nav__list__description:hover .sub-list {
+  width: 17rem;
+  height: 181px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+  list-style: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 1020px) {
+  .nav__list__description:hover .sub-list {
+    width: 17rem;
+    position: absolute;
+    right: 0;
+    background-color: hsl(26.67deg, 15.25%, 88.43%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+  }
+}
+
+.sub-list__item:hover {
+  transform: translateX(9px);
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+
+.sub-list a {
+  text-decoration: none;
+  color: hsl(357.84deg, 88.99%, 42.75%);
+}
+
+.sub-list a:hover {
+  text-decoration: none;
+  color: #0e0e0e;
 }/*# sourceMappingURL=navbar.module.css.map */
