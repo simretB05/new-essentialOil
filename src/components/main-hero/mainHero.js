@@ -6,6 +6,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faSolarPanel } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
 import classes from "../main-hero/mainHero.module.scss";
+import CommentSlider from '../comments-slider/CommentSlider';
 
 const Hero = () => (
     <>
@@ -108,30 +109,7 @@ const Hero = () => (
                 </div>
                 
             </div>
-            <div className={classes.testimonials}>
-                        <h3 className={classes.testimonials__title}>Testimonials</h3>
-                <div className={classes.main__testimonials}>
-                    <div className={classes.main__testimonials__card}>
-                            <div className={classes.main__testimonials__card__holder}><img className={classes.main__testimonials__card__img} src="./assets/images/image-thomas.jpg" alt="pesrson_image"/>
-                            </div>
-                            <div className={classes.main__testimonials__card__cont}>
-                                <h3 className={classes.main__testimonials__card__name}>Thomas</h3>
-                                <p className={classes.main__testimonials__card__copy}>Lorem,  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam asperiores, cupiditate maxime sunt fugiat esse nostrum, quia harum vitae amet nesciunt et! In obcaecati, voluptate provident recusandae esse velit illum! ipsum dolor sit amet consectetur adipisicing elit. Doloribus harum debitis perferendis ut aliquam vel,</p>
-                            </div>
-                    </div>
-                        
-                    <div className={classes.testimonials__nav}>
-                        <button className={classes.testimonials__nav__angle__left}><img className={classes.testimonials__nav__icon__left} src="./assets/icons/icon-previous.svg" alt=" persons_image"/>
-                        </button>
-                        <button className={classes.testimonials__nav__angle__right}><img className={classes.testimonials__nav__icon__right }src="./assets/icons/icon-next.svg" alt="persons_image"/>
-                        </button>
-                    </div>
-                        <Link to="/collection">
-                            <button className={classes.testimonials__btn}> Review Our Products Here!</button>
-                        </Link>
-                </div > 
-                
-            </div>
+           <CommentSlider/>
         </div>
     </>
 
