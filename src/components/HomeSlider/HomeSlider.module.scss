@@ -11,25 +11,28 @@
   @include laptop-query{
     height: 368px;
    }
+   @include tablet-query{
+    // top:40%;
+    height: 368px;
+
+  }
+  @include laptop-query{
+    // top:25%;
+    height: 478px;
+
+
+  }
+  @include laptop-l-query{
+    // top:25%;
+    height: 668px;
+  }
   &__btn{
     width: 100%;
     @include flex-space-bteween;
     position: absolute;
     
     z-index: 1;
-    @include tablet-query{
-      // top:40%;
-      height: 368px;
-
-    }
-    @include laptop-query{
-      // top:25%;
- 
-    }
-    @include laptop-l-query{
-      // top:25%;
-      // height: 668px;
-    }
+    
   }
   &__prev{
     width: 30px;
@@ -80,6 +83,7 @@
       flex-direction: column;
       flex:1 0 100%;
       scroll-snap-align: start;
+      height: 100%;
       @include laptop-query{
 
 

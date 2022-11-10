@@ -56,6 +56,7 @@
 }
 
 body {
+  position: relative;
   font-family: "Kumbh";
 }
 
@@ -81,6 +82,21 @@ body.modal {
     height: 368px;
   }
 }
+@media screen and (min-width: 768px) {
+  .container {
+    height: 368px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .container {
+    height: 478px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    height: 668px;
+  }
+}
 .container__btn {
   width: 100%;
   display: flex;
@@ -88,11 +104,6 @@ body.modal {
   justify-content: space-between;
   position: absolute;
   z-index: 1;
-}
-@media screen and (min-width: 768px) {
-  .container__btn {
-    height: 368px;
-  }
 }
 .container__prev {
   width: 30px;
@@ -153,6 +164,7 @@ body.modal {
   flex-direction: column;
   flex: 1 0 100%;
   scroll-snap-align: start;
+  height: 100%;
 }
 .container__carousel__img {
   width: 100%;
