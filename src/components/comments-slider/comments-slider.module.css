@@ -56,6 +56,7 @@
 }
 
 body {
+  position: relative;
   font-family: "Kumbh";
 }
 
@@ -217,7 +218,7 @@ body.modal {
 .testimonials__card__holder__copy {
   color: hsl(0deg, 0%, 100%);
   text-align: center;
-  font-size: 0.71rem;
+  font-size: 0.821rem;
 }
 @media screen and (min-width: 768px) {
   .testimonials__card__holder__copy {
