@@ -1,8 +1,17 @@
 @import "../../styles/styles.scss";
 
+.main{
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  
+
+}
+
 .main__hero{
   margin: 0 auto;
-  padding: $p-base*3 $p-base 0 $p-base;
+  position: relative;
+  top: 0%;
 }
 .hero__title{
   @include font-family-normal;
@@ -43,27 +52,28 @@
       letter-spacing: .5px;
       margin: 0 auto 4rem;
 }
-.service__container{
-  max-width: 56.25em;
+.service{
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   @include tablet-query{
      max-width: 100%;
-     margin: 0 auto;
   }
   @include laptop-query{
       max-width: 100%;
-      height: 500px;
       flex-wrap: nowrap;
+      margin-bottom: 3rem;
+@include laptop-l-query{
+  margin-bottom: 13rem;
+
+}
   }
 }
 .service__card{
   width: 100%;
   padding: 0;
-  display: flex;
+ @include flex-center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   flex: 0 0 100%;
   height: 13rem;
   margin-bottom: 2rem;
@@ -119,54 +129,49 @@
   letter-spacing: .5px;
 }
 .type{
-  width: 100%;
-  margin: $m-base*3 auto;
-  padding: 0 1rem 0 1rem;
-  @include flex-center;
-  flex: 0 0 100%;
-  flex-wrap: wrap;
+  width: 90%;
+  margin:  0 auto;
+  background-color: $c-light-gray-back;
   @include font-family-normal;
-  color: $c-light-body;
   font-weight: $fw-normal;
-  @include laptop-query{
-      background-color: $c-light-gray-back;
-      width:89%;
+  // margin: $m-base*3 auto;
+  // padding: 0 1rem 0 1rem;
+  // @include flex-center;
+  // flex: 0 0 100%;
+  // flex-wrap: wrap;
+  
+  @include tablet-query{
+      display: flex;
       flex-direction: row;
-      flex: 0 0 300%;
-      justify-content: space-around;
-      padding: 0;
   }
-  &__picture__container{
+  &__card{
       background-color: $c-light-gray-back;
-      width: 100%;
+      text-align: center;
+      width: 100%;  
+      height: 23rem;
+      background-color: $c-light-gray-back;
+      @include flex-center;
+      flex-direction: column;
       @include laptop-query{
           width: 65%;
           height: 23rem;
           background-color: $c-light-gray-back;
       }
-  }
-  &__card__img{
+  &__img{
       width: 100%;
         height: 100%;
-  }
-  &__body__container{
-      background-color: $c-light-gray-back;
-      width: 100%;
-      padding: 1rem;
-      @include laptop-query{
-          width: 35%;
-      }
   }
   &__title{
       font-weight: $fw-normal;
       text-align: center;
-      padding: $p-base;
+      padding: $p-base*2;
       margin: 0 auto;
       color: $c-deep-red;
       font-family: $fw-bold;
       font-size: 1.91rem;
   }
   &__copy{
+    padding: $p-base;
       text-align: center;
       text-align: center;
       background-color: $c-light-gray-back;
@@ -174,7 +179,7 @@
       font-size: .91rem;
   }
 }
-
+}
 
 .card__container{
   width: 100%;
@@ -309,150 +314,4 @@
   top: 78%;
     left: 7%;
 }
-}
-.testimonials{
-  color :$c-white;
-  @include flex-center;
-  flex-direction: column;
-    background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8)),url(../../../public/assets/images/images23.jpg);
-    background-size: cover;
-    background-position: 100%;
-    background-repeat: no-repeat;
-    max-width: 100%;
-    height: 80vh;
-    padding: 0;
-    &__title{
-      margin: $m-base auto 0;
-      text-align: center;
-      font-size: 1.9rem;
-      position: relative;
-      padding-bottom: 1rem;
-      &::after{
-        content: "";
-        position: absolute;
-        background-color: rgb(241, 241, 233);
-        display: block;
-        height: 3px;
-        width: 10rem;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 1rem auto 0;
-      }
-      @include tablet-query{
-        width: 60%;
-        font-size: 1.9rem;
-      }
-      @include laptop-query{
-        width: 60%;
-        font-size: 2.1rem;
-      }
-      @include laptop-l-query{
-        width: 60%;
-        font-size: 2.4rem;
-      }
-    }
-    &__nav{ 
-      width: 40%;
-      height: 90px;
-      @include  flex-space-bteween;
-      
-  }
-  &__btn{
-    @include paperStyleShadow;
-    border: 1px solid black;
-    color:$c-white;
-    padding: .5rem;
-    border-radius: .6rem;
-    background-color: $c-light-body;
-    margin: $m-base 0;
-    &:hover{
-      background-color:#6E4A9E ;
-    }
-   
-  }
-  &__btn a{
-    color: $c-white;
-    text-decoration: none;
-  }
-}
-.testimonials__nav__angle__left,.testimonials__nav__angle__right{
-  background-color: transparent;
-  border: none;
-  
-}
-.testimonials__nav__icon__left,.testimonials__nav__icon__right{
-filter: invert(100%) sepia(125%) saturate(88%) hue-rotate(18deg)
-brightness(228%) contrast(100%);
-}
-.main__testimonials{
-  overflow: hidden;
-  width: 100%;
-  height: 264px;
-  display: flex;
-  padding: $p-base;
-  margin-bottom: 1rem;
-@include tablet-query{
-  width: 60%;
-  font-size: 1.2rem;
-}
-@include laptop-query{
-  width: 60%;
-  font-size: 1.3rem;
-}
-@include laptop-l-query{
-  width: 60%;
-  font-size: 1.7rem;
-}
-  &__card{
-    width: 100%;
-    margin: 0 auto;
-    @include flex-center;
-    flex-direction: column;
-    transform: translateX(-500px);
-    display: none;
-  &__holder{
-    width: 100%;
-  @include flex-center;
-  }
-  &__img{
-    width: 40px;
-    height: 40px;
-    border: 1px solid hsl(0deg, 0%, 100%);
-    border-radius: 50%;
-  }
-  &__cont{
-  margin: 0 auto;
-  max-height:70% ;
-  text-align: center;
-
-  }
-  &__name{
-   margin: 0;
-   @include tablet-query{
-    font-size: 1.2rem;
-  }
-  }
-  &__copy{
-    width: 100%;
-    text-align: center;
-    overflow-y: auto;
-    &::-webkit-scrollbar{
-      display: none;
-    }
-  }
-}
-}
-.showComments {
-  display: flex;
-  transform: translateX(0);
-  @include laptop-query {
-      display: block;
-      margin: 0;
-  }
-}
-.fa-capsules,.fa-solar-panel,.fa-hands-holding-child,.fa-briefcase{
-  width: 70px;
-  height:22px;
-  color: $c-dark-green;
 }

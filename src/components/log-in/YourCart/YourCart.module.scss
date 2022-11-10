@@ -1,5 +1,6 @@
 @import "../../../styles/styles.scss";
 
+
 .main{
   height: 100vh;
   width: 100%;
@@ -10,14 +11,12 @@
   &__section{
     width: 70%;
     margin: 0 auto;
-  
   &__title{
     @include font-family-normal;
     font-weight: $fw-bold;
     margin: 0;
     font-size: 1.7rem;
     color: $c-deep-red;
-    
     &::before{
       content: "";
       position: absolute;
@@ -33,12 +32,10 @@
       display: block;
       height: 1px;
       width: 70%;
-    
     }
   }
   }
 }
-
 .shoping__cart {
     padding: 1rem;
     margin: auto;
@@ -58,14 +55,11 @@
        width: 0;
       background: transparent;
   }
-  
-  
     @include tablet-query {
       width: 45%;
         margin: 0 auto;
         // right:78%;
         // transform: translateX(600px);
-  
     }
     @include laptop-query {
     //   transform: translateX(440px);
@@ -96,17 +90,15 @@
       }
       @include laptop-query{
         right: 270px;
-
       }
       @include laptop-l-query{
         top: 4px;
         right: 387px;
       }
-  
     &__img{
-  fill: $c-deep-red;
-  width: 10px;
-  height: 11px;
+      fill: $c-deep-red;
+      width: 10px;
+      height: 11px;
       }
     }
     &__popup {
@@ -149,7 +141,6 @@
     }
     &__text{
       font-weight: $fw-bold !important;
-  
     }
     &__price{
       margin-left: $m-base*.5;
@@ -157,13 +148,10 @@
     }
     &__span{
       margin-left:$m-base*.5;
-  
-  
     }
     &__main__cont {
         display: flex;
         flex-direction: column;
-      
         // display: none;
     }
     &__container {
@@ -177,14 +165,12 @@
   &__text__container{
       margin: $m-base;
       font-weight: $fw-normal;
-  
   }
     &__title {
         font-size: 1rem;
         // font-weight: $fw-bold !important;
         color: $c-deep-red;
         font-weight: $fw-normal;
-  
     }
     &__total{
       color: $c-deep-red;
@@ -197,7 +183,6 @@
         font-weight: $fw-bold;
         color: $c-deep-red;
         font-weight: $fw-normal;
-  
     }
     &__img {
         width: 69px;
@@ -221,7 +206,6 @@
     &__checkOutHolder{
       margin: 0 auto;
     }
-  
     &__checkOutBtn{
       background-color: $c-deep-red;
       border: none;
@@ -280,7 +264,6 @@
       @include laptop-l-query{
         width:70%;
       }
-  
   &__list{
       @include flex-space-bteween;
       list-style: none;
@@ -300,7 +283,6 @@
       height: 35px;
       margin: 0;
       padding:0;
-  
   }
   .hidden{
       display: none;
@@ -308,15 +290,11 @@
   .removeShopingCart{
       transform: translateX(0);
       transition: transform 1s ease-in-out;
-     
   }
   .closeActive{
     transform: translateX(360px);
     opacity: 1;
     transition: transform 1s ease-in-out;
-  
-  
-    
     @include laptop-query{
         display: none;
         transform:none;
@@ -324,10 +302,7 @@
     }
   }
   .bounce{
-  
     animation: bounce 1s alternate;
-  
-  
   @keyframes bounce {
     0% {
       transform: scale(1);
@@ -365,14 +340,11 @@
        width: 0;
       background: transparent;
   }
-  
-  
     @include tablet-query {
       width: 45%;
         margin: 0 auto;
         // right:78%;
         transform: translateX(600px);
-  
     }
     @include laptop-query {
       transform: translateX(440px);

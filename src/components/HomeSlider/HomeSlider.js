@@ -32,7 +32,7 @@ function HomeCarousel({ slidHomeData }) {
     
    };
     return (
-      <div className={classes.container}>
+        <div className={classes.container}>
          <div className={classes.container__btn}>
         <button className={classes.container__prev} onClick={() => incrementCarousel(-1)} >
           <img src={prevBtn} alt="prev button" />
@@ -47,8 +47,9 @@ function HomeCarousel({ slidHomeData }) {
                   <img className={classes.container__carousel__img} src={slide.img} alt="images" />
                  </div>
               ))}
+          </div>
         </div>
-        </div>
+      
   )
 }
 

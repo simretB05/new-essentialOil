@@ -33,7 +33,6 @@ function YourCart() {
       <main className={classes.main}>
         <section className={classes.main__section}>
         <h1 className={classes.main__section__title}>Your Cart </h1>
-        
         <div>
 						{!hasItems? (
 							<h4 class={classes.shoping__cart__empty}>cart is empty</h4>

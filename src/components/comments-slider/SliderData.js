@@ -4,67 +4,33 @@ const  ReviewSliderData = [
  
   {
     id: uuidv4(),
-    name:"Tomas",
+    name:"Emily",
     title: "Moisturizer With Essential Oils",
-    img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
+    img: "../../assets/images/image-emily.jpg",
+    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem "
 
 
   },
   {
     id: uuidv4(),
+    name:"Jennie",
     title: "mother's day saving's all summer long",
     img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
+    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem "
 
 
   },
   {
-    name:"Tomas",
     id: uuidv4(),
-    title: "heavenly scents at your door",
-    img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
-
-
-  },
-  {
-    name:"Tomas",
-
-    id: uuidv4(),
+    name:"EThomas",
     title: "mother's day saving's all summer long",
-    img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
+    img: "../../assets/images/image-jennie.jpg",
+    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem "
 
 
   },
-  {
-    name:"Tomas",
-    id: uuidv4(),
-    title: "June Gift shope with purchase",
-    img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
 
-
-  },
-  {
   
-    name:"Tomas",
-    id: uuidv4(),
-    title: "Certified organic essential oils ",
-    img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
-
-
-  },
-  {
-    name:"Tomas",
-    id: uuidv4(),
-    title: "mother's day saving's all summer long",
-    img: "../../assets/images/image-thomas.jpg",
-    reviews: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eum, Laudantium nisi harum voluptatem"
-
-  },
  
 ];
 
