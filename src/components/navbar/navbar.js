@@ -21,6 +21,10 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
               
       };
 
+      const menuCloseHandler = () => {
+        setMenuOpen(false);
+
+    };
   const [menuOpenCart, setMenuOpenCart] = useState(false);
   
   
@@ -52,23 +56,23 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
         {/* <Modal open={menuOpen} > */}
         <ul className={menuOpen ? classes.navToggle__active : classes.nav__list}>
           {!isAuthenticated && (
-            <li className={classes.nav__list__description}>
+            <li onClick={menuCloseHandler} className={classes.nav__list__description}>
               <NavLink className={menuOpen ? classes.nav__list__description__link : classes.nav__list__description__link} to="/collection">
                 collection
                 <u className={classes['sub-list']}>
-                  <li className={classes['sub-list__item']} >
+                  <li onClick={menuCloseHandler} className={classes['sub-list__item']} >
                     <a href="#">Lavender Essential Oil</a>
                   </li>
-                  <li className={classes['sub-list__item']}>
+                  <li onClick={menuCloseHandler} className={classes['sub-list__item']}>
                     <a href="#">Peppermint Essential Oil</a>
                   </li>
-                  <li className={classes['sub-list__item']}>
+                  <li onClick={menuCloseHandler} className={classes['sub-list__item']}>
                     <a href="#">Lemon Essential oil</a>
                   </li>
-                  <li className={classes['sub-list__item']}>
+                  <li  onClick={menuCloseHandler}className={classes['sub-list__item']}>
                     <a href="#">Sun Flower Essential oil</a>
                   </li>
-                  <li className={classes['sub-list__item']}>
+                  <li  onClick={menuCloseHandler}className={classes['sub-list__item']}>
                     <a href="#">Tea Tree Essential oil</a>
                   </li>
                   </u>
@@ -76,49 +80,49 @@ function Navbar({products, cart, setCart,  isAuthenticated, onLogout}) {
             </li>
           )}
           {!isAuthenticated && (
-            <li className={classes.nav__list__description}>
+            <li onClick={menuCloseHandler} className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/contact-us">
                 contact-us
               </NavLink>
             </li>
           )}
           {!isAuthenticated && (
-            <li className={classes.nav__list__description}>
+            <li onClick={menuCloseHandler} className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/about-us">
                 Aobut-us
               </NavLink>
             </li>
           )}
           {isAuthenticated && (
-            <li className={classes.nav__list__description}>
+            <li onClick={menuCloseHandler} className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/log-in">
                 Login Home
               </NavLink>
             </li>
           )}
           {isAuthenticated && (
-            <li className={classes.nav__list__description}>
+            <li onClick={menuCloseHandler} className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/user">
                 Users
               </NavLink>
             </li>
           )}
           {isAuthenticated && (
-            <li className={classes.nav__list__description}>
+            <li  onClick={menuCloseHandler}className={classes.nav__list__description}>
               <NavLink className={classes.nav__list__description__link} to="/your-cart">
                 Your cart
               </NavLink>
             </li>
           )}
           {!isAuthenticated && (
-            <li className={classes.nav__list__description__login}>
+            <li  onClick={menuCloseHandler} className={classes.nav__list__description__login}>
               <NavLink className={classes.nav__list__description__login__link} to="/log-in">
                 <button className={classes.nav__list__description__login__link} >Login</button>
               </NavLink>
             </li>
           )}
           {isAuthenticated && (
-            <li className={classes.nav__list__description__login}>
+            <li  onClick={menuCloseHandler}className={classes.nav__list__description__login}>
               <NavLink className={classes.nav__list__description__login__link} to="/log-in">
                 <button onClick={onLogout} className={classes.nav__list__description__login__link} > Logout  </button>
 

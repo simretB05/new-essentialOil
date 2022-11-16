@@ -4,7 +4,8 @@
   color :$c-white;
   @include flex-around ;
   flex-direction: column;
-    background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8)),url(../../../public/assets/images/images23.jpg);
+    background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8)),
+    url(../../../public/assets/images/images23.jpg);
     background-size: cover;
     background-position: 100%;
     background-repeat: no-repeat;

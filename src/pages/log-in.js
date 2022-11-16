@@ -10,7 +10,7 @@ function LogIn(props) {
       return (
             <>
 
-            <section className='content'>
+            <section >
                         {!props.isAuthenticated && <LogInHero isAuthenticated={props.isAuthenticated}  onLogin={props.onLogin} onLogout={props.onLogout} />}
                         {props.isAuthenticated && <HomeLogin onLogout={props.onLogout} />}
             </section>

@@ -6,11 +6,12 @@ const AboutHero = () => (
     <>
         <div className={classes.content}>
             <div className={classes.about}>
+            <h3 className={classes.about__discription__title}>Our purppse</h3>
+
                 <div className={classes.about__main}>
                     <img src="./assets/images/100-Stunning-Purple-Flowers-1.jpeg" alt="curry_hair" className={classes.about__main__img}/>
                 </div>
                 <div className={classes.about__discription}>
-                    <h3 className={classes.about__discription__title}>Our purppse</h3>
                     <p className={classes.about__discription__body}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ad, numquam asperiores nisi, laudantium ab eligendi voluptates consectetur animi placeat fuga aut aliquid perspiciatis officiis sint consequatur dolorem quo magnam.</p>
                     <div className={classes.about__card}>
                         <div className={classes.about__mainCard}>

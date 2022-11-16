@@ -5,7 +5,7 @@ import AboutHero from '../components/about-page/aboutHero';
 
 const About = () => (
   <>
-    <section className="content">
+    <section >
     <AboutHero/>
     </section>
     
